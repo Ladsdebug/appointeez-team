@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HVAC Lead Exchange - Exclusive HVAC Leads for U.S. Contractors</title>
+<meta name="description" content="Buy exclusive, phone-verified HVAC repair and install leads for your service area. No shared leads, no long-term contract.">
+<style>
+:root{
+--navy:#0B0E1B;
+--navy-2:#121633;
+--panel:#151A33;
+--gold:#D3A059;
+--gold-2:#E8C184;
+--ink:#F4F1EA;
+--ink-dim:#B9BBCC;
+--line:rgba(211,160,89,0.25);
+--good:#8FD6A8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:var(--navy);
+color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+line-height:1.55;
+}
+h1,h2,h3{
+font-family:Georgia,"Times New Roman",serif;
+font-weight:700;
+text-wrap:balance;
+margin:0 0 .5em;
+color:var(--ink);
+}
+a{color:var(--gold-2)}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.btn{
+display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+padding:14px 26px;border-radius:8px;font-weight:700;font-size:15px;
+text-decoration:none;border:1px solid transparent;cursor:pointer;
+font-family:inherit;transition:transform .15s ease, opacity .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#1b1304}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
+
+header{
+position:sticky;top:0;z-index:20;
+background:rgba(11,14,27,0.9);backdrop-filter:blur(8px);
+border-bottom:1px solid var(--line);
+}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand .name{font-family:Georgia,serif;font-weight:700;font-size:19px;color:var(--gold-2)}
+.brand .tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+.nav-actions{display:flex;gap:10px}
+
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.eyebrow{
+display:inline-block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--gold-2);border:1px solid var(--line);padding:6px 12px;border-radius:999px;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(30px,4.2vw,46px);max-width:17ch}
+.hero p.lede{font-size:18px;color:var(--ink-dim);max-width:60ch;margin:0 0 22px}
+.hero .price-line{font-size:17px;color:var(--ink);margin:0 0 26px}
+.hero .price-line b{color:var(--gold-2);font-variant-numeric:tabular-nums}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.lock-note{font-size:13px;color:var(--ink-dim)}
+
+.snapshot{
+background:var(--panel);border:1px solid var(--line);border-radius:14px;
+padding:24px;width:100%;max-width:460px;justify-self:end;
+}
+.snapshot h3{font-size:15px;margin-bottom:16px;color:var(--gold-2);font-family:inherit}
+.snapshot ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.snapshot li{display:flex;justify-content:space-between;align-items:center;font-size:14px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.snapshot li:last-child{border-bottom:none;padding-bottom:0}
+.snapshot .ok{color:var(--good);font-weight:700;font-size:13px}
+
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:clamp(24px,3vw,32px);margin-bottom:10px}
+section .section-lede{color:var(--ink-dim);max-width:60ch;margin-bottom:36px}
+
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.calc .controls{display:grid;gap:22px}
+.calc label{display:block;font-size:13px;color:var(--ink-dim);margin-bottom:8px}
+.calc .valline{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.calc .valline b{color:var(--gold-2);font-variant-numeric:tabular-nums}
+.calc input[type=range]{width:100%;accent-color:var(--gold)}
+.calc .outputs{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;gap:18px}
+.calc .out-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding-bottom:14px}
+.calc .out-row:last-child{border-bottom:none;padding-bottom:0}
+.calc .out-row .label{color:var(--ink-dim);font-size:14px}
+.calc .out-row .value{font-size:22px;font-weight:700;color:var(--gold-2);font-variant-numeric:tabular-nums}
+.calc .fine-print{font-size:12px;color:var(--ink-dim);margin-top:4px}
+
+table.compare{width:100%;border-collapse:collapse;min-width:520px}
+.table-scroll{overflow-x:auto}
+table.compare th,table.compare td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+table.compare thead th{color:var(--ink-dim);font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+table.compare td.highlight,table.compare th.highlight{background:rgba(211,160,89,0.08);color:var(--gold-2);font-weight:700}
+
+.faq-item{border-bottom:1px solid var(--line);padding:20px 0}
+.faq-item:first-child{padding-top:0}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{font-size:17px;margin-bottom:8px;font-family:inherit}
+.faq-item p{color:var(--ink-dim);margin:0}
+
+.pilot-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.pilot-intro .kicker{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);font-weight:700;margin-bottom:14px}
+.pilot-intro h2{font-size:clamp(24px,3vw,32px)}
+.pilot-intro .section-lede{margin-bottom:28px}
+
+.pilot-form{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:36px}
+.pilot-form .field{margin-bottom:18px}
+.pilot-form label{display:block;font-size:13px;color:var(--ink-dim);margin-bottom:6px}
+.pilot-form input,.pilot-form select{
+width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);
+background:#0E1226;color:var(--ink);font-size:15px;font-family:inherit;
+}
+.pilot-form input:focus,.pilot-form select:focus{outline:2px solid var(--gold-2);outline-offset:2px}
+.pilot-form .form-note{font-size:13px;color:var(--ink-dim);margin:14px 0 0}
+
+footer{padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--ink-dim);font-size:13px}
+
+@media(max-width:960px){
+.hero-grid{grid-template-columns:1fr}
+.snapshot{justify-self:stretch;max-width:460px;margin-top:40px}
+.pilot-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:820px){
+.calc{grid-template-columns:1fr}
+table.compare{min-width:0}
+.table-scroll{overflow-x:visible}
+table.compare thead{display:none}
+table.compare, table.compare tbody, table.compare tr, table.compare th, table.compare td{display:block;width:100%}
+table.compare tr{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;padding:6px 0;background:var(--panel)}
+table.compare th[scope="row"]{border-bottom:1px solid var(--line);font-size:13px;color:var(--gold-2);text-transform:uppercase;letter-spacing:.05em;padding:10px 16px}
+table.compare td{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding:10px 16px}
+table.compare td:last-child{border-bottom:none}
+table.compare td::before{content:attr(data-label);color:var(--ink-dim);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+table.compare td.highlight{border-radius:0 0 8px 8px}
+}
+@media(max-width:600px){
+header .wrap{flex-wrap:wrap;gap:10px;padding:14px 16px}
+.nav-actions{width:100%;gap:8px}
+.nav-actions .btn{flex:1;padding:10px 14px;font-size:13px}
+}
+@media(max-width:480px){
+.wrap{padding:0 16px}
+.hero{padding:40px 0 36px}
+.hero h1{font-size:clamp(26px,7vw,32px)}
+.hero .cta-row{flex-direction:column}
+.hero .cta-row .btn{width:100%}
+.snapshot{padding:20px}
+.pilot-form{padding:22px}
+footer .wrap{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap">
+<div class="brand">
+<span class="name">HVAC Lead Exchange</span>
+<span class="tag">Exclusive leads for HVAC contractors</span>
+</div>
+<div class="nav-actions">
+<a href="#demo" class="btn btn-outline">Book a Call</a>
+<a href="mailto:hello@appointeezteam.com" class="btn btn-gold">Email Us</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-main">
+<span class="eyebrow">HVAC Repair &amp; Install &middot; U.S. Contractors</span>
+<h1>Exclusive HVAC leads, delivered to your team in real time.</h1>
+<p class="lede">We generate and phone-verify HVAC repair and install leads in your service area, then hand them to you exclusively - never resold, never shared with a competitor.</p>
+<p class="price-line">No long-term contract to start - test us on a small batch of leads before committing to a monthly volume.</p>
+<div class="cta-row">
+<a href="#demo" class="btn btn-gold">Book a Call</a>
+<a href="mailto:hello@appointeezteam.com" class="btn btn-outline">Email Us Instead</a>
+</div>
+<p class="lock-note">Pick your own service area and lead volume. Pause or cancel any time.</p>
+</div>
+
+<div class="snapshot">
+<h3>What you get with every lead</h3>
+<ul>
+<li>Exclusivity <span class="ok">Yours alone</span></li>
+<li>Qualification <span class="ok">Phone-verified</span></li>
+<li>Delivery <span class="ok">Real-time</span></li>
+<li>Service area <span class="ok">You choose</span></li>
+<li>Bad lead replacement <span class="ok">Free swap</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>See the upside before you commit</h2>
+<p class="section-lede">Adjust the sliders to match your own numbers. The close rate and job value are yours to set - we'd rather you test it on your own market than take our word for it.</p>
+<div class="calc">
+<div class="controls">
+<div>
+<div class="valline"><span>Leads purchased per month</span><b id="leadsOut">20</b></div>
+<input type="range" id="leads" min="5" max="100" step="5" value="20">
+</div>
+<div>
+<div class="valline"><span>Close rate on purchased leads</span><b id="rateOut">25%</b></div>
+<input type="range" id="rate" min="10" max="60" step="5" value="25">
+</div>
+<div>
+<div class="valline"><span>Average job value</span><b id="dealValueOut">$4,500</b></div>
+<input type="range" id="dealValue" min="500" max="15000" step="250" value="4500">
+</div>
+<div>
+<div class="valline"><span>Cost per lead</span><b id="costOut">$65</b></div>
+<input type="range" id="cost" min="20" max="150" step="5" value="65">
+</div>
+</div>
+<div class="outputs">
+<div class="out-row"><span class="label">Jobs booked / month</span><span class="value" id="jobsOut">5</span></div>
+<div class="out-row"><span class="label">Revenue generated / month</span><span class="value" id="revOut">$22,500</span></div>
+<div class="out-row"><span class="label">Lead spend / month</span><span class="value" id="spendOut">$1,300</span></div>
+<div class="out-row"><span class="label">Net return / month</span><span class="value" id="netOut">$21,200</span></div>
+</div>
+</div>
+<p class="calc fine-print">Illustrative only - your close rate and job value depend on your own sales process and market.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>How we compare</h2>
+<p class="section-lede">Most lead sources either sell the same lead to three or four other contractors, or ask you to build and run your own ad funnel from scratch.</p>
+<div class="table-scroll">
+<table class="compare">
+<thead>
+<tr>
+<th scope="col">&nbsp;</th>
+<th scope="col">Shared lead marketplaces</th>
+<th scope="col">Running your own ads</th>
+<th scope="col" class="highlight">HVAC Lead Exchange</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row" data-label="">Exclusivity</th>
+<td data-label="Shared lead marketplaces">Sold to 3-4 contractors at once</td>
+<td data-label="Running your own ads">Exclusive, but takes months to ramp</td>
+<td data-label="HVAC Lead Exchange" class="highlight">Exclusive, same week</td>
+</tr>
+<tr>
+<th scope="row" data-label="">Cost predictability</th>
+<td data-label="Shared lead marketplaces">Pay per click regardless of quality</td>
+<td data-label="Running your own ads">Ad costs swing week to week</td>
+<td data-label="HVAC Lead Exchange" class="highlight">Flat cost per qualified lead</td>
+</tr>
+<tr>
+<th scope="row" data-label="">Qualification</th>
+<td data-label="Shared lead marketplaces">Often unverified</td>
+<td data-label="Running your own ads">Depends on your own funnel</td>
+<td data-label="HVAC Lead Exchange" class="highlight">Phone-verified before delivery</td>
+</tr>
+<tr>
+<th scope="row" data-label="">Bad lead replacement</th>
+<td data-label="Shared lead marketplaces">Rare or limited</td>
+<td data-label="Running your own ads">Not applicable</td>
+<td data-label="HVAC Lead Exchange" class="highlight">Swapped free</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Frequently asked questions</h2>
+<div class="faq-item">
+<h3>How are leads qualified before I get them?</h3>
+<p>Every lead is phone-verified: we confirm the homeowner has an active HVAC repair or install need and that it falls inside your chosen service area before it's sent to you.</p>
+</div>
+<div class="faq-item">
+<h3>Are the leads exclusive to me?</h3>
+<p>Yes. Each lead is sold once, to one contractor, in one service area. We don't resell it to anyone else.</p>
+</div>
+<div class="faq-item">
+<h3>What happens if a lead is bad?</h3>
+<p>If a lead doesn't meet the criteria we promised, it's swapped for a new one at no extra cost.</p>
+</div>
+<div class="faq-item">
+<h3>Is there a minimum commitment?</h3>
+<p>No. Start with a small test batch in your service area before committing to a monthly volume.</p>
+</div>
+</div>
+</section>
+
+<section id="demo" style="border-bottom:none">
+<div class="wrap">
+<div class="pilot-grid">
+<div class="pilot-intro">
+<span class="kicker">Book a Call</span>
+<h2>See a sample of leads in your area</h2>
+<p class="section-lede">Tell us your service area and how many leads a month you're looking for, and we'll show you what exclusive HVAC leads look like before you commit to anything.</p>
+<a href="mailto:hello@appointeezteam.com" class="btn btn-outline">Email Us Instead</a>
+</div>
+
+<form class="pilot-form" id="demoForm">
+<div class="field">
+<label for="company">Company name</label>
+<input id="company" type="text" required>
+</div>
+<div class="field">
+<label for="email">Work email</label>
+<input id="email" type="email" required>
+</div>
+<div class="field">
+<label for="website">Company website</label>
+<input id="website" type="text" placeholder="e.g. yourcompany.com">
+</div>
+<div class="field">
+<label for="serviceArea">Service area (city/state)</label>
+<input id="serviceArea" type="text" placeholder="e.g. Dallas, TX">
+</div>
+<div class="field">
+<label for="leadVolume">Leads wanted per month</label>
+<input id="leadVolume" type="text" placeholder="e.g. 20-30 leads/month">
+</div>
+<input type="hidden" id="niche" value="HVAC repair and install">
+<button type="submit" class="btn btn-gold" style="width:100%">Book a Call</button>
+<p class="form-note">Submitting sends your request to our team for scheduling. Nothing is shared with a CRM yet - a team member will follow up directly.</p>
+</form>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div>appointeezteam.com/hvac-repair-install - HVAC Lead Exchange</div>
+<div>Questions? Email <a href="mailto:hello@appointeezteam.com">hello@appointeezteam.com</a></div>
+</div>
+</footer>
+
+<script>
+const fmtUSD = n => '$' + Math.round(n).toLocaleString('en-US');
+
+const leadsEl = document.getElementById('leads');
+const rateEl = document.getElementById('rate');
+const dealValueEl = document.getElementById('dealValue');
+const costEl = document.getElementById('cost');
+
+const leadsOut = document.getElementById('leadsOut');
+const rateOut = document.getElementById('rateOut');
+const dealValueOut = document.getElementById('dealValueOut');
+const costOut = document.getElementById('costOut');
+const jobsOut = document.getElementById('jobsOut');
+const revOut = document.getElementById('revOut');
+const spendOut = document.getElementById('spendOut');
+const netOut = document.getElementById('netOut');
+
+function recalc(){
+const leads = parseInt(leadsEl.value, 10);
+const rate = parseInt(rateEl.value, 10);
+const dealValue = parseInt(dealValueEl.value, 10);
+const cost = parseInt(costEl.value, 10);
+
+leadsOut.textContent = leads;
+rateOut.textContent = rate + '%';
+dealValueOut.textContent = fmtUSD(dealValue);
+costOut.textContent = fmtUSD(cost);
+
+const jobs = Math.round(leads * (rate / 100));
+const revenue = jobs * dealValue;
+const spend = leads * cost;
+const net = revenue - spend;
+
+jobsOut.textContent = jobs;
+revOut.textContent = fmtUSD(revenue);
+spendOut.textContent = fmtUSD(spend);
+netOut.textContent = fmtUSD(net);
+}
+
+[leadsEl, rateEl, dealValueEl, costEl].forEach(el => el.addEventListener('input', recalc));
+recalc();
+</script>
+
+<script>
+(function(){
+// TODO: once a GHL/ACA pipeline + inbound webhook exists for HVAC Lead Exchange call bookings,
+// set WEBHOOK_URL below and switch this back to a fetch() call, same pattern as the
+// other Appointeez pilot forms. Left disconnected for now per instruction - form just
+// confirms locally and does not send data anywhere yet.
+const WEBHOOK_URL = null;
+const form = document.getElementById('demoForm');
+if (!form) return;
+
+form.addEventListener('submit', function(e){
+e.preventDefault();
+
+const submitBtn = form.querySelector('button[type="submit"]');
+const originalBtnText = submitBtn ? submitBtn.textContent : '';
+if (submitBtn) {
+submitBtn.disabled = true;
+submitBtn.textContent = 'Submitting...';
+}
+
+const params = new URLSearchParams({
+company: document.getElementById('company').value.trim(),
+email: document.getElementById('email').value.trim(),
+website: document.getElementById('website').value.trim(),
+serviceArea: document.getElementById('serviceArea').value.trim(),
+leadVolume: document.getElementById('leadVolume').value.trim(),
+niche: document.getElementById('niche').value.trim(),
+source: 'Book a Call - appointeezteam.com/hvac-repair-install'
+});
+
+function finish(){
+if (submitBtn) {
+submitBtn.disabled = false;
+submitBtn.textContent = originalBtnText;
+}
+alert('Thanks - we will be in touch within one business day.');
+form.reset();
+}
+
+if (WEBHOOK_URL) {
+fetch(WEBHOOK_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' })
+.then(finish)
+.catch(finish);
+} else {
+finish();
+}
+});
+})();
+</script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Concrete Lead Exchange - Exclusive Concrete &amp; Driveway Leads for U.S. Contractors</title>
-<meta name="description" content="Phone-verified, exclusive concrete and driveway leads sent straight to your team. Pay per lead. No contract to start.">
+<meta name="description" content="Phone-verified, exclusive concrete and driveway leads sent straight to your team. Pay per lead.">
 <meta name="robots" content="noindex">
 <style>
 :root{
@@ -116,6 +116,8 @@ table.compare thead .highlight{color:var(--gold-2)}
 }
 .field input:focus-visible{outline:2px solid var(--gold-2);outline-offset:1px}
 .consent{font-size:11px;color:var(--ink-dim);margin:-6px 0 14px}
+.consent-checkbox{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:var(--ink-dim);cursor:pointer;margin-bottom:14px}
+.consent-checkbox input{margin-top:3px;flex-shrink:0;width:14px;height:14px;accent-color:var(--gold)}
 .form-note{font-size:12px;color:var(--ink-dim);margin-top:10px;text-align:center}
 .success-box{text-align:center;padding:10px 0}
 .success-box h3{margin-bottom:10px}
@@ -164,14 +166,12 @@ footer .f-links a{color:var(--ink-dim);margin-right:14px;text-decoration:underli
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">CONCRETE &amp; DRIVEWAYS &middot; U.S. CONTRACTORS</span>
+        <span class="eyebrow">Quality Concrete &amp; Driveways leads for contractors.</span>
         <!-- NICHE COPY START: headline / subhead -->
         <h1 id="hero-h1">More booked concrete &amp; driveway estimates. Pay only per lead.</h1>
         <p class="lede">We find homeowners with an active concrete or driveway need, phone-verify them, and send them to you exclusively. Never resold, never shared with a competitor.</p>
         <!-- NICHE COPY END -->
-        <a href="#form" class="btn btn-gold">Book My 15-Min Call</a>
-        <p class="hero-sub">No contract. Start with a small test batch. Pause or cancel any time.</p>
-      </div>
+        <a href="#form" class="btn btn-gold">Book My 15-Min Call</a>      </div>
       <div class="hero-card">
         <div class="card-title">What you get with every lead</div>
         <div class="card-row"><span>Exclusivity</span><span class="v">Yours alone</span></div>
@@ -191,7 +191,7 @@ footer .f-links a{color:var(--ink-dim);margin-right:14px;text-decoration:underli
     <div class="how-grid">
       <div class="how-step">
         <div class="num">1</div>
-        <p>Tell us your service area. Pick the cities or ZIPs you want to work in.</p>
+        <p>Tell us your service area and we will get leads for you in those locations.</p>
       </div>
       <div class="how-step">
         <div class="num">2</div>
@@ -306,12 +306,7 @@ footer .f-links a{color:var(--ink-dim);margin-right:14px;text-decoration:underli
     <div class="faq-item">
       <h3>What if a lead is bad?</h3>
       <p>We replace a lead only if the phone number is dead - disconnected or not in service. We don't replace leads for any other reason.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is there a minimum commitment?</h3>
-      <p>No. Start with a small test batch in your area before deciding on monthly volume.</p>
-    </div>
-  </div>
+    </div>  </div>
 </section>
 
 <!-- SECTION 7: FINAL CTA + FORM -->
@@ -341,6 +336,12 @@ footer .f-links a{color:var(--ink-dim);margin-right:14px;text-decoration:underli
           <div class="field">
             <label for="f-area">Service area (city/state)</label>
             <input id="f-area" name="serviceArea" type="text" placeholder="e.g. Dallas, TX" required>
+          </div>
+          <div class="field">
+            <label class="consent-checkbox" for="f-consent">
+              <input type="checkbox" id="f-consent" name="consent" required>
+              <span>By submitting your contact information, you understand and agree that you may be contacted by us regarding your service request, using email, telephone or text messaging, including through autodialled and/or prerecorded calls or messages, to the telephone number provided above, which may include your mobile telephone number, if provided. You understand that consent is not a condition of purchase.</span>
+            </label>
           </div>
           <input type="hidden" id="niche" name="niche" value="Concrete and driveways">
           <button type="submit" class="btn btn-gold btn-block">Book My 15-Min Call</button>
